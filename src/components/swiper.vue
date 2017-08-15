@@ -1,9 +1,9 @@
 <!-- The ref attr used to find the swiper instance -->
 <template>
   <swiper :options="swiperOption" ref="mySwiper">
-    <swiper-slide><img src="https://s17.mogucdn.com/mlcdn/c45406/170731_894640f4fk2ab86ei3hfi56g8ijbh_750x390.jpg_999x999.v1c0.webp"/></swiper-slide>
-    <swiper-slide><img src="https://s17.mogucdn.com/mlcdn/c45406/170731_894640f4fk2ab86ei3hfi56g8ijbh_750x390.jpg_999x999.v1c0.webp"/></swiper-slide>
-    <swiper-slide><img src="https://s17.mogucdn.com/mlcdn/c45406/170731_894640f4fk2ab86ei3hfi56g8ijbh_750x390.jpg_999x999.v1c0.webp"/></swiper-slide>
+    <swiper-slide><img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1503299615&di=b7ff1c7667a466225c5f2f6773fc4e93&imgtype=jpg&er=1&src=http%3A%2F%2Fd7.yihaodianimg.com%2FN10%2FM05%2F3A%2FAE%2FChEi3FXMXreAV29CAAL2-L144aQ17100.jpg"/></swiper-slide>
+    <swiper-slide><img src="http://d6.yihaodianimg.com/N02/M0B/8B/6D/CgQCslPDWrKAMyCcAAK_Gp2MSAE45700.jpg"/></swiper-slide>
+    <swiper-slide><img src="http://d6.yihaodianimg.com/N07/M00/36/3F/ChEbvFV_1bWAGIPNAALVqoO4_wo12800.jpg"/></swiper-slide>
 
     <div class="swiper-pagination"  slot="pagination"></div>
   </swiper>

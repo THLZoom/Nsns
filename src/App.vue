@@ -5,27 +5,25 @@
     </section>
     <footer class="home_nav">
         <ul>
-            <li><router-link class="router_a" to='/home'>首页</router-link></li>
-            <li><router-link class="router_a" to='/goods'>商品</router-link></li>
-            <li><router-link class="router_a" to='/cart'>购物车</router-link></li>
-            <li><router-link class="router_a" to='/mine'>我的</router-link></li>
+            <li><router-link class="router_a" to='/home'><i class="iconfont icon-home"></i>首页</router-link></li>
+            <li><router-link class="router_a" to='/goods'><i class="iconfont icon-shangpingouwudai-copy"></i>商品</router-link></li>
+            <li><router-link class="router_a" to='/cart'><i class="iconfont icon-gouwuche"></i>购物车</router-link></li>
+            <li><router-link class="router_a" to='/mine'><i class="iconfont icon-wode"></i>我的</router-link></li>
         </ul>
     </footer>
   </div>
 </template>
 
 <script>
-
-
 export default {
-  name: 'app',
-  data:function(){
-    return{
+    name: 'app',
+    data:function(){
+        return{
+        }
+    },
+    methods:{
+    
     }
-  },
-  methods:{
-  }
-
 }
 </script>
 
@@ -91,7 +89,7 @@ table {
 /* 重置 hr */
 hr {
     border: none;
-    height: 1px;
+     height: 1px; 
 }
 
 /* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
@@ -99,22 +97,19 @@ html { overflow-y: scroll; }
 
 html,body{
   width: 100%;
-  height: 100%;
-  background: #f5edf0;
+  background: #f4f4f4;
 }
 #app{
   width: 100%;
-  height: 100%;
 }
 #wrap{
   width: 100%;
-  height: 92%;
-  overflow-y: auto; 
+  overflow-y: scroll; 
 }
 
 .home_nav{
     width: 100%;
-    height: 8%;    
+    height: 4rem;
     position: fixed;
     bottom: 0;
     background: #fafafa;
@@ -123,38 +118,24 @@ html,body{
 }
 .home_nav ul{
     width: 100%;
-    height: 100%;
 }
 .home_nav li{
-    float: left;
-    width: 25%;
-    height: 100%;
-}
-  .home_nav li .router_a{
     display: inline-block;
+    width: 24%;
+}
+.home_nav li .router_a{
+    display: block;
     text-align: center;
-    padding-top: 38%;
     width: 100%;
-    height: 36%; 
+    height: 4rem;
 } 
 .home_nav .router-link-active{
     color: #ff3366;
 }
-   .home_nav li:nth-child(1){
-    background: url(../assets/home.svg) no-repeat 50% 18%;
-    background-size:50% 44%;
-}   
-.home_nav li:nth-child(2){
-    background: url(../assets/goods.svg) no-repeat 50% 18%;
-    background-size:50% 44%;
+.home_nav li i{
+    display: block;
+    font-size: 1.7rem;
+    line-height: 2.5rem;
 }
-.home_nav li:nth-child(3){
-    background: url(../assets/cart.svg) no-repeat 50% 18%;
-    background-size:50% 44%;
-}
-.home_nav li:nth-child(4){
-    background: url(../assets/mine.svg) no-repeat 50% 18%;
-    background-size:50% 44%;
-}   
 
 </style>

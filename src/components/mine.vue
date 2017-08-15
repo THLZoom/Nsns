@@ -1,6 +1,6 @@
 <template>
     <div class="mine">
-        <ul class="mine_header">
+        <ul class="mine_header" :style="{background:anthor}">
             <li>
                 <router-link class="router_a" to='/cart'></router-link>
             </li>
@@ -20,12 +20,6 @@
             <div>
             </div>
         </div>
-        <ul class="mine_order">
-            <li><a><p>{{num_pay}}</p>待付款</a></li>
-            <li><a><p>{{num_dispatch}}</p>待发货</a></li>
-            <li><a><p>{{num_confirm}}</p>待确认</a></li>
-            <li><a><p>{{num_review}}</p>待评价</a></li>
-        </ul>
         <div class="mine_account">
             <p>账户余额 :
                 <span> {{balance}}</span>
@@ -34,19 +28,26 @@
                 <span> {{jf}}</span>
             </p>
         </div>
+        <ul class="mine_order">
+            <li><a><p>{{num_pay}}</p>待付款</a></li>
+            <li><a><p>{{num_dispatch}}</p>待发货</a></li>
+            <li><a><p>{{num_confirm}}</p>待确认</a></li>
+            <li><a><p>{{num_review}}</p>待评价</a></li>
+        </ul>
+        
         <ul class="mine_nav">
-            <li><a>我的订单</a></li>
-            <li><a>我的资料</a></li>
-            <li><a>我的积分</a></li>
-            <li><a>修改密码</a></li>
+            <li><a><i class="iconfont icon-dingdan-copy"></i>我的订单</a></li>
+            <li><a><i class="iconfont icon-ziliao"></i>我的资料</a></li>
+            <li><a><i class="iconfont icon-icon-copy"></i>我的积分</a></li>
+            <li><a><i class="iconfont icon-mima"></i>修改密码</a></li>
         </ul>
         <ul class="mine_item">
-            <li><a>会员特权</a></li>
-            <li><a>积分商城</a></li>
-            <li><a>收货地址</a></li>
-            <li><a>在线客服</a></li>
-            <li><a>罗莎简介</a></li>
-            <li><a>罗莎资讯</a></li>
+            <li><a><i class="iconfont icon-huiyuan"></i>会员特权</a></li>
+            <li><a><i class="iconfont icon-shangcheng"></i>积分商城</a></li>
+            <li><a><i class="iconfont icon-scdizhi"></i>收货地址</a></li>
+            <li><a><i class="iconfont icon-zaixiankefu"></i>在线客服</a></li>
+            <li><a><i class="iconfont icon-intro3-copy"></i>罗莎简介</a></li>
+            <li><router-link to='/theme'><i class="iconfont icon-msnui-theme"></i>更换主题</router-link></li>
         </ul>
     </div>
 </template>
@@ -67,59 +68,61 @@ export default {
             num_confirm:'0',
             num_review:'0'
         }
+    },
+    computed:{
+        anthor(){
+            return this.$store.state.anthor;
+        }
     }
 }
 </script>
 <style>
 .mine {
     width: 100%;
-    height: 100%;
+    padding-bottom: 5rem;
 }
 /* mine 顶部 */
 .mine_header {
     width: 100%;
-    height: 7%;
     background: #fff;
 }
 
 .mine_header li {
-    width: 33.3%;
-    height: 100%;
-    float: left;
-    font-size: 1.6rem;
+    width: 32%;
+    display: inline-block;
+    font-size: 1.3rem;
     text-align: center;
     line-height: 3.5rem;
-    
+    vertical-align: middle;
 }
 .mine_header li:nth-child(3) {
-    background: url(../../assets/mine_home.svg) no-repeat 80% 50%;
+    background: url(../../assets/mine_home.svg) no-repeat 100% 50%;
     background-size: 32% 60%;
 }
 
 .mine_header li:nth-child(3) a {
     display: block;
     width: 43%;
-    height: 100%;
-    margin-left: 50%;
+    height: 3.5rem;
+    margin-left: 63%;
 }
 
 .mine_header li:nth-child(1) {
-    background: url(../../assets/back.svg) no-repeat 20% 57%;
+    background: url(../../assets/back.svg) no-repeat 1% 57%;
     background-size: 32% 60%;
 }
 
 .mine_header li:nth-child(1) a {
     display: block;
     width: 43%;
-    height: 100%;
-    margin-left: 10%;
+    height: 3.5rem;
 }
 
 
 /* 用户信息部分 */
 .mine_info {
     width: 100%;
-    height: 21%;
+    padding: 2rem 0;
     background: -webkit-linear-gradient(right, #71bdf3, #C9F);
     background: -moz-linear-gradient(right, #71bdf3, #C9F);
     background: -o-linear-gradient(right, #71bdf3, #C9F);
@@ -127,21 +130,22 @@ export default {
 }
 
 .mine_info div {
-    float: left;
-    height: 100%;
-    width: 33.3%;
+    display: inline-block;
+    width: 31%;
+    vertical-align: middle;
 }
 .mine_info div:nth-child(2){
     width: 53%;
+    padding-bottom: 1rem;
 }
 .mine_info div:nth-child(3){
     width: 13%;
+    height: 5rem;
 }
 
 .mine_info .persion_img {
-    margin: 3rem 0 0 2rem;
+    margin-left: 2rem;
     width: 55%;
-    height: 53%;
     border-radius: 50%;
 }
 
@@ -151,15 +155,13 @@ export default {
     white-space: nowrap;
     font-size: 1.2rem;
     width: 100%;
-    height: 25%;
-    margin-top: 25%;
+    line-height: 3.8rem;
     color: #fff;
 }
 
 .mine_info .persion_grade {
-    height: 15%;
     width: 60%;
-    line-height: 160%;
+    line-height: 1rem;
     color: #fff;
 }
 
@@ -172,46 +174,42 @@ export default {
 /* 用户余额，积分部分 */
 .mine_account {
     width: 100%;
-    height: 7%;
-    background: linear-gradient(to right, #71A0EE, #C9E);
+    background: linear-gradient(to right, #71bdf3, #C9F);
+    line-height: 3rem;
     color: #fff;
 }
 
 .mine_account p {
     display: inline-block;
-    width: 49.4%;
-    height: 100%;
+    width: 49%;
     text-align: center;
-    padding-top: 4%;
+    padding-top: 1rem;
     padding-left: 10%;
 }
 
 .mine_account p:nth-child(1) {
-    background: url(../../assets/balance.svg) no-repeat 22% 55%;
+    background: url(../../assets/balance.svg) no-repeat 22% 67%;
     background-size: 12% 45%;
 }
 
 .mine_account p:nth-child(2) {
-    background: url(../../assets/integral.svg) no-repeat 23% 51%;
+    background: url(../../assets/integral.svg) no-repeat 23% 67%;
     background-size: 23% 63%;
 }
 .mine_order{
     width: 100%;
-    height: 12%;
-    background: linear-gradient(to right, #71bdf3, #C9F);
-    border-top: 1px solid rgba(255,255,255,.5);
+    background: linear-gradient(to right, #71A0EE, #C9E);
+    border-top: 1px solid rgba(255,255,255,0.2);
 }
 .mine_order li{
-    float: left;
-    width: 25%;
-    height: 100%;
+    display: inline-block;
+    width: 24%;
 }
 .mine_order li a{
     display: block;
     color: #fff;
     width: 100%;
-    height: 60%;
-    margin-top: 20%;
+    line-height: 2rem;
     text-align: center;
 
 }
@@ -222,83 +220,83 @@ export default {
 /* 用户订单选项 */
 .mine_nav{
     width: 100%;
-    height:14%;
     margin-top: 4%;
     background: #fff;
 }
 .mine_nav li{
-    float: left;
-    width: 25%;
-    height: 100%;
+    display: inline-block;
+    width: 24%;
     text-align: center;
 }
 .mine_nav li a{
     display: block;
     width: 100%;
-    height: 33%;
     color: #333;
-    padding-top: 61%;
+    padding-bottom: 1rem; 
 }
-.mine_nav li:nth-child(1){
-    background: url(../../assets/order.svg) no-repeat 50% 36%;
-    background-size: 28% 40%;
+.mine_nav li a i{
+    display: block;
+    font-size: 2rem;
+    line-height: 3.5rem;
 }
-.mine_nav li:nth-child(2){
-    background: url(../../assets/message.svg) no-repeat 50% 36%;
-    background-size: 30% 40%;
+
+.mine_nav .icon-dingdan-copy{
+    color: #FCE38A;
 }
-.mine_nav li:nth-child(3){
-    background: url(../../assets/jf.svg) no-repeat 50% 36%;
-    background-size: 30% 40%;
+.mine_nav .icon-ziliao{
+    color: #3490DE;
 }
-.mine_nav li:nth-child(4){
-    background: url(../../assets/password.svg) no-repeat 50% 36%;
-    background-size: 25% 40%;
+.mine_nav .icon-icon-copy{
+    color: #62D2A2;
 }
+.mine_nav .icon-mima{
+    color: #A82FFC;
+}
+
 
 /* 用户选项 */
 .mine_item{
     width: 100%;
-    height: 34%;
     margin-top: 4%;
     background: #fff;
 }
 .mine_item li{
-    width: 25%;
-    height: 50%;
-    float: left;
+    width: 24%;
+    padding-bottom: 1rem;
+    display: inline-block;
     text-align: center;
     border-bottom: 1px solid #EFEFEF;
 }
 .mine_item li a{
     display: block;
-    width: 100%;
-    height: 30%;
-    padding-top: 70%;
+    width: 100%;    
     color: #333;
 }
-.mine_item li:nth-child(1){
-    background: url(../../assets/vip.svg) no-repeat 50% 28%;
-    background-size: 30% 26%;
+.mine_item li a i{
+    display: block;
+    font-size: 2.5rem;
+    line-height: 4.5rem;
 }
-.mine_item li:nth-child(2){
-    background: url(../../assets/store.svg) no-repeat 50% 28%;
-    background-size: 38% 26%;
+
+.mine_item .icon-huiyuan{
+    font-size: 2rem;
+    color: #E41655;
 }
-.mine_item li:nth-child(3){
-    background: url(../../assets/address.svg) no-repeat 50% 28%;
-    background-size: 38% 26%;
+.mine_item .icon-shangcheng{
+    color: #00AD7C;
 }
-.mine_item li:nth-child(4){
-    background: url(../../assets/service.svg) no-repeat 50% 28%;
-    background-size: 38% 26%;
+.mine_item .icon-scdizhi{
+    color: #F98B60;
 }
-.mine_item li:nth-child(5){
-    background: url(../../assets/introduces.svg) no-repeat 50% 28%;
-    background-size: 38% 26%;
+.mine_item .icon-zaixiankefu{
+    color: #FF165D;
 }
-.mine_item li:nth-child(6){
-    background: url(../../assets/news.svg) no-repeat 50% 28%;
-    background-size: 38% 26%;
+.mine_item .icon-intro3-copy{
+    color: #3490DE;
 }
+.mine_item .icon-msnui-theme{
+    color: #FCE38A;
+    font-size: 3rem;
+}
+
 </style>

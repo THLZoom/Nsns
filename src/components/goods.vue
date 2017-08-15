@@ -11,7 +11,7 @@
             <div class="goods_type_one">
                 <div class="type_one_header">产品分类</div>
                 <ul class="type_one_nav">
-                    <li><a><img :src="img_shuangfu"/>洗面、爽肤水类</a></li>
+                    <li><router-link to='/goodsList'><img :src="img_shuangfu"/>洗面、爽肤水类</router-link></li>
                     <li><a><img :src="img_mianshuang"/>面霜、眼霜、乳类</a></li>
                     <li><a><img :src="img_mianmo"/>精华、面膜类</a></li>
                     <li><a><img :src="img_taozhuang"/>实惠、精品套装</a></li>
@@ -57,51 +57,47 @@
 <style>
 .goods{
     width:100%;
-    height: 100%;
 }
 
 /* goods头部 */
 .goods_header{
-    height: 7%;
     background: #fff;
 }
 .goods_header .header_icon{
     width: 35%;
-    height: 100%;
-    float: left;
+    display: inline-block;
 }
 .goods_header .header_icon a{
     display: inline-block;
     width: 100%;
-    height: 100%;
-    background: url(http://www.nsnsd.com/images/logo.png) no-repeat 1%;
-    background-size: contain; 
+    height: 3.6rem;
+    background: url(http://www.nsnsd.com/images/logo.png) no-repeat .5rem .2rem;
+    background-size: contain;  
 }
 .goods_header form{
     width: 50%;
-    height: 100%;
-    float: left;
+    height: 3.6rem;
+    display: inline-block;
     position: relative;
 }
 .goods_header input{
     border: none;
     background: #F4F4F4;
     width: 100%;
-    height: 60%;
+    height: 2.3rem;
     border-radius: 6%;
     position: absolute;
     top: 20%;
     left: 3%
 }
 .goods_header .cart_header{
-    width: 15%;
-    height: 100%;
-    float: left;
+    width: 12%;
+    display: inline-block;
 }
 .goods_header .cart_header a{
     display: inline-block;
     width: 100%;
-    height: 100%;
+    height: 3.6rem;
     background: url(../../assets/cart_header.svg) no-repeat 60% 45%;
     background-size:50% 44%;
 }
@@ -109,23 +105,21 @@
 
 /* goods内容 */
 .goods_content{
-    width: 98%;
-    height: 93%;
+    width: 99%;
+    padding-bottom: 4rem;
 }
 .goods_content div{
     background: #fff;
-    padding-left: 2%;
+    padding-left: 1%;
 }
 
 /* type_one */
 .goods_content .goods_type_one{
     width: 100%;
-    height: 30%;
 }
 .goods_content .goods_type_one .type_one_header{
     width: 95%;
-    height: 30%;
-    background: url(../../assets/goods_type_one.svg) no-repeat 1% 50%; 
+    background: url(../../assets/goods_type_one.svg) no-repeat 1% 53%; 
     background-size: 10% 42%;
     border-bottom: 1px solid #e0e0e0;
     color: #e19b4a;
@@ -135,24 +129,20 @@
 }
 .goods_content .goods_type_one .type_one_nav{
     width: 97%;
-    height: 70%;
 }
 .goods_content .goods_type_one .type_one_nav li{
-    width: 50%;
-    height: 50%;
-    float: left;
-    border-bottom: 1px solid #e0e0e0;
+    width: 49%;
+    display: inline-block;
+    text-indent: .3rem;
 }
 .goods_content .goods_type_one .type_one_nav li a{
     display: block;
     width: 100%;
-    height: 60%;
-    margin-top: 6%;
-    line-height: 3rem;
+    line-height: 5rem;
 }
 .goods_content .goods_type_one .type_one_nav li a img{
-    width: 20%;
-    height: 100%;
+    width: 3rem;
+    height: auto;
     vertical-align: middle;
     margin-right: 1rem;
     border-radius: 50%;
@@ -162,13 +152,11 @@
 /* type_two */
 .goods_content .goods_type_two{
     width: 100%;
-    height: 40%;
-    margin-top: 4%;
+    margin-top: 2%;
 }
 .goods_content .goods_type_two .type_two_header{
     width: 95%;
-    height: 22%;
-    background: url(../../assets/goods_type_two.svg) no-repeat 1% 50%; 
+    background: url(../../assets/goods_type_two.svg) no-repeat 1% 53%; 
     background-size: 10% 60%;
     border-bottom: 1px solid #e0e0e0;
     color: #d4237a;
@@ -178,24 +166,20 @@
 }
 .goods_content .goods_type_two .type_two_nav{
     width: 97%;
-    height: 78%;
 }
 .goods_content .goods_type_two .type_two_nav li{
-    width: 50%;
-    height: 33.3%;
-    float: left;
-    border-bottom: 1px solid #e0e0e0;
+   width: 49%;
+    display: inline-block;
+    text-indent: .3rem;
 }
 .goods_content .goods_type_two .type_two_nav li a{
     display: block;
     width: 100%;
-    height: 60%;
-    margin-top: 6%;
-    line-height: 3rem;
+    line-height: 5rem;
 }
 .goods_content .goods_type_two .type_two_nav li a img{
-    width: 20%;
-    height: 100%;
+    width: 3rem;
+    height: auto;
     vertical-align: middle;
     margin-right: 1rem;
     border-radius: 50%;
@@ -207,12 +191,11 @@
 .goods_content .goods_type_three{
     width: 100%;
     height: 30%;
-    margin-top: 4%;
+    margin-top: 2%;
 }
 .goods_content .goods_type_three .type_three_header{
     width: 95%;
-    height: 30%;
-    background: url(../../assets/goods_type_three.svg) no-repeat 1% 50%; 
+    background: url(../../assets/goods_type_three.svg) no-repeat 1% 53%; 
     background-size: 10% 60%;
     border-bottom: 1px solid #e0e0e0;
     color: #1296db;
@@ -222,24 +205,20 @@
 }
 .goods_content .goods_type_three .type_three_nav{
     width: 97%;
-    height: 70%;
 }
 .goods_content .goods_type_three .type_three_nav li{
-    width: 50%;
-    height: 50%;
-    float: left;
-    border-bottom: 1px solid #e0e0e0;
+    width: 49%;
+    display: inline-block;
+    text-indent: .3rem;
 }
 .goods_content .goods_type_three .type_three_nav li a{
     display: block;
     width: 100%;
-    height: 60%;
-    margin-top: 6%;
-    line-height: 3rem;
+    line-height: 5rem;
 }
 .goods_content .goods_type_three .type_three_nav li a img{
-    width: 20%;
-    height: 100%;
+    width: 3rem;
+    height: auto;
     vertical-align: middle;
     margin-right: 1rem;
     border-radius: 50%;
