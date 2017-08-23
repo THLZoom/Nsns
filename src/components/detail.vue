@@ -2,11 +2,11 @@
     <div class="detail">
         <ul class="detail_header">
             <li>
-                <router-link class="router_a" to='/home'></router-link>
+                <a @click="back"><i class="iconfont icon-fanhui"></i></a>
             </li>
             <li>{{header_name}}</li>
             <li>
-                <router-link class="router_a" to='/home'></router-link>
+                <router-link class="router_a" to='/home'><i class="iconfont icon-zhuye"></i></router-link>
             </li>
         </ul>
         <div class="detail_body">
@@ -33,10 +33,10 @@
             <div class="detail_footer_pay"><a>立即购买</a></div>
             <div class="detail_footer_addToCart" @click="addGoods()" v-show="goods_num==0">加入购物车</div>
             <div class="detail_footer_num" v-show="goods_num>0">
-                <span class="sub toGrey" @click="subGoods()"></span>
-                <span>{{goods_num}}</span>
-                <span class="add" @click="addGoods()"></span>
-            </div>
+            <span class="sub toGrey" @click="subGoods()"></span>
+            <span>{{goods_num}}</span>
+            <span class="add" @click="addGoods()"></span>
+        </div>
             <div class="detail_footer_toCart">
                 <span class="detail_footer_numIcon" v-show="goods_num>0">{{goods_num}}</span>
                 <router-link to='/cart'></router-link>
@@ -70,6 +70,9 @@
             },
             subGoods:function(){    
                 this.goods_num>0?this.goods_num--:this.goods_num=0;
+            },
+            back:function(){
+                this.$router.go(-1);
             }
         }
     }
@@ -94,10 +97,7 @@
     line-height: 3.5rem;
     vertical-align: middle;
 }
-.detail_header li:nth-child(3) {
-    background: url(../../assets/mine_home.svg) no-repeat 100% 50%;
-    background-size: 32% 60%;
-}
+
 
 .detail_header li:nth-child(3) a {
     display: block;
@@ -105,10 +105,9 @@
     height: 3.5rem;
     margin-left: 63%;
 }
-
-.detail_header li:nth-child(1) {
-    background: url(../../assets/back.svg) no-repeat 1% 57%;
-    background-size: 32% 60%;
+.icon-fanhui,.icon-zhuye{
+    color: black;
+    font-size: 2.2rem;
 }
 
 .detail_header li:nth-child(1) a {
@@ -127,12 +126,12 @@
     bottom: 0;
     z-index:999;
     border-top:1px solid #e0e0e0; 
+    display: flex;
 }
 /* 商品详情页底部购物车图标 */
 .detail_footer .detail_footer_toCart{
     width: 18%;
     border-top: 1px solid #e0e0e0;
-    display: inline-block; 
     padding: 2%;
     border-radius: 50%;
     position: absolute;
@@ -164,7 +163,6 @@
 
 /* 商品详情页底部立即购买 */
 .detail_footer .detail_footer_pay{
-    display: inline-block;
     width: 20%;
     text-align: center;
     line-height: 4rem;
@@ -176,7 +174,6 @@
 }
 /* 商品详情页底部加入购物车 */
 .detail_footer .detail_footer_addToCart{
-    display: inline-block;
     width: 66%;
     font-size: 1.3rem;
     line-height: 4rem;
@@ -190,12 +187,11 @@
 /* 商品详情页加减 */
 .detail_footer .detail_footer_num{
     width: 40%;
-    display: inline-block;
     margin-left: 5rem;
+    display: flex;
 }
 .detail_footer .detail_footer_num span{
     width: 33.3%;
-    display: inline-block;
     vertical-align: middle;
 }
 .detail_footer .detail_footer_num .add{
@@ -210,7 +206,7 @@
 }
 .detail_footer .detail_footer_num span:nth-child(2){
     text-align: center;
-    line-height: 3.3rem;
+    line-height: 3.8rem;
     width: 15%;
     font-size: 1.5rem;
 }
@@ -299,4 +295,5 @@
 .detail_body .detail_body_particulars ul{
     width: 100%;
 }
+
 </style>

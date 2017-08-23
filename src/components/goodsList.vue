@@ -7,11 +7,11 @@
         </ul>
         <ul class="gl_content" @touchmove='loadMore'>
              <li v-for="(item,index) in goods" :key="index">
-                <a>
+                <router-link to='detail'>
                     <img :src="item.img"/>
                     <p>{{item.title}}</p>
                     <span>{{item.price+' '+index}}</span>
-                </a>
+                </router-link>
              </li>
         </ul>
         <transition name='fade'>
@@ -149,16 +149,16 @@
     position: fixed;
     right: 1rem;
     bottom: 7rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     text-align: center;
-    line-height: 2rem;
+    line-height: 3rem;
     
 }
 .icon-fanhuidingbu{
     color: red;
-    font-size: 1.7rem;
+    font-size: 2rem;
 }
 
 .fade-enter-active, .fade-leave-active {

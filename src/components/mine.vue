@@ -2,11 +2,11 @@
     <div class="mine">
         <ul class="mine_header" :style="{background:anthor}">
             <li>
-                <router-link class="router_a" to='/cart'></router-link>
+                <router-link class="router_a" to='/cart'><i class="iconfont icon-fanhui"></i></router-link>
             </li>
             <li>{{header_name}}</li>
             <li>
-                <router-link class="router_a" to='/home'></router-link>
+                <router-link class="router_a" to='/home'><i class="iconfont icon-zhuye"></i></router-link>
             </li>
         </ul>
         <div class="mine_info">
@@ -95,9 +95,9 @@ export default {
     line-height: 3.5rem;
     vertical-align: middle;
 }
-.mine_header li:nth-child(3) {
-    background: url(../../assets/mine_home.svg) no-repeat 100% 50%;
-    background-size: 32% 60%;
+.icon-fanhui,.icon-zhuye{
+    color: black;
+    font-size: 2.2rem;
 }
 
 .mine_header li:nth-child(3) a {
@@ -107,10 +107,6 @@ export default {
     margin-left: 63%;
 }
 
-.mine_header li:nth-child(1) {
-    background: url(../../assets/back.svg) no-repeat 1% 57%;
-    background-size: 32% 60%;
-}
 
 .mine_header li:nth-child(1) a {
     display: block;

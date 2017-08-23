@@ -134,7 +134,7 @@ html,body{
 }
 .home_nav li i{
     display: block;
-    font-size: 1.7rem;
+    font-size: 2rem;
     line-height: 2.5rem;
 }
 

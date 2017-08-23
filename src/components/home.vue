@@ -5,7 +5,7 @@
             <form action="" method="get">
                 <input type="search" />
             </form>
-            <i class="cart_header"><router-link class="router_a" to='/cart'></router-link></i>
+            <i class="cart_header"><router-link class="router_a" to='/cart'><i class="iconfont icon-cart"></i></router-link></i>
         </header>
 
         <Swiper id="banner"></Swiper>
@@ -40,11 +40,11 @@
             </ul>
             <ul @touchmove='loadMore' class="list_content">
                 <li v-for="(item,index) in goods" :key="index">
-                    <a>
+                    <router-link to='detail'>
                         <img :src="item.img"/>
                         <p>{{item.title}}</p>
                         <span>{{item.price}}</span>
-                    </a>
+                    </router-link>
                 </li>
             </ul>
             <transition name='fade'>
@@ -135,10 +135,10 @@
 .home_header{
     width: 100%;
     background: #fff;
+    display: flex;
 }
 .home_header .header_icon{
     width: 35%;
-    display: inline-block;
 }
 .home_header .header_icon a{
     display: inline-block;
@@ -150,7 +150,6 @@
 .home_header form{
     width: 50%;
     height: 3.6rem;
-    display: inline-block;
     position: relative;
 }
 .home_header input{
@@ -165,14 +164,15 @@
 }
 .home_header .cart_header{
     width: 12%;
-    display: inline-block;
+    text-align: right;
 }
 .home_header .cart_header a{
-    display: inline-block;
     width: 100%;
     height: 3.6rem;
-    background: url(../../assets/cart_header.svg) no-repeat 60% 45%;
-    background-size:50% 44%;
+    line-height: 3.6rem;
+}
+.icon-cart{
+    font-size: 2rem;
 }
 
 /* 首页导航 */
@@ -324,16 +324,16 @@
     position: fixed;
     right: 1rem;
     bottom: 7rem;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
     border-radius: 50%;
     text-align: center;
-    line-height: 2rem;
+    line-height: 3rem;
     
 }
 .icon-fanhuidingbu{
     color: red;
-    font-size: 1.7rem;
+    font-size: 2rem;
 }
 
 .fade-enter-active, .fade-leave-active {

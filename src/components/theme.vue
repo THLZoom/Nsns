@@ -54,10 +54,7 @@
     line-height: 3.5rem;
     
 }
-.theme_header li:nth-child(3) {
-    background: url(../../assets/mine_home.svg) no-repeat 80% 50%;
-    background-size: 32% 60%;
-}
+
 
 .theme_header li:nth-child(3) a {
     display: block;
@@ -65,10 +62,6 @@
     margin-left: 50%;
 }
 
-.theme_header li:nth-child(1) {
-    background: url(../../assets/back.svg) no-repeat 20% 57%;
-    background-size: 32% 60%;
-}
 
 .theme_header li:nth-child(1) a {
     display: block;
