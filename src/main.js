@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
+// import VueResource from 'vue-resource'
 import Vuex from 'vuex'
 import $ from 'jquery'
 import MintUI from 'mint-ui'
@@ -18,7 +18,7 @@ import Theme from './components/theme'
 import GoodsList from './components/goodsList'
 Vue.config.productionTip = false
 Vue.use(VueRouter)
-Vue.use(VueResource)
+// Vue.use(VueResource)
 Vue.use(VueAwesomeSwiper)
 Vue.use(Vuex)
 Vue.use(MintUI)
